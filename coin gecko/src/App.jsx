@@ -1,13 +1,15 @@
 import Banner from "./components/Banner";
+import CoinTable from "./components/CoinTable";
 import Navbar from "./components/NavBar";
-import TrendingCoins from "./components/TrendingCoins";
 
 function App() {
-  return (<div>
-    <Navbar/>
-    <Banner/>
-    {/* <TrendingCoins/> */}
-  </div>)
+  return (
+    <div >
+      <Navbar />
+      <Banner />
+      <CoinTable />
+    </div>
+  );
 }
 
 export default App;
