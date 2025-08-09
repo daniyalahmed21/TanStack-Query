@@ -1,5 +1,5 @@
-// src/components/CryptoBanner.jsx
-import React from 'react';
+import React from "react";
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
@@ -8,9 +8,12 @@ const Banner = () => {
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Discover the Future of Finance</h1>
           <p className="py-6">
-            Explore real-time market data, track your favorite cryptocurrencies, and stay up-to-date with the latest trends in the blockchain world.
+            Explore real-time market data, track your favorite cryptocurrencies,
+            and stay up-to-date with the latest trends in the blockchain world.
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <Link to="/markets">
+            <button className="btn btn-primary">Get Started</button>
+          </Link>
         </div>
       </div>
     </div>

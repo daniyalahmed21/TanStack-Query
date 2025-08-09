@@ -1,16 +1,13 @@
-import React from 'react'
-import Navbar from '../components/NavBar'
-import Banner from '../components/Banner'
-import CoinTable from '../components/CoinTable'
+import React from "react";
+import Banner from "../components/Banner";
+import CoinTable from "./CoinTable";
 
 const Home = () => {
   return (
-    <div >
-    <Navbar />
-    <Banner />
-    <CoinTable />
-  </div>
-  )
-}
+    <div className="bg-base-300 h-full">
+      <Banner />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

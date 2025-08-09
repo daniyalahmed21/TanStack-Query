@@ -2,10 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import { fetchCoinData } from "../services/fetchCoinDataByMarket";
 import { CurrencyContext } from "../context/CurrencyContext";
+import { useNavigate } from "react-router";
 
 const CoinTable = () => {
   const [page, setPage] = useState(1);
   const { currency } = useContext(CurrencyContext);
+  const navigate = useNavigate()
+  const handleOnClick = (id) =>{
+    navigate(`/details/${id}`)
+  }
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["coins", page],
@@ -47,12 +52,12 @@ const CoinTable = () => {
           </thead>
           {/* Table Body */}
           <tbody>
-            {data.map((coin, _) => (
-              <tr key={coin.id} className="hover">
+            {data.map((coin) => (
+              <tr onClick={()=>handleOnClick(coin.id)} key={coin.id} className="hover ">
                 <th>{coin.market_cap_rank}</th>
                 <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
+                  <div className="flex items-center space-x-3 cursor-pointer">
+                    <div className="avatar ">
                       <div className="mask mask-squircle w-8 h-8">
                         <img src={coin.image} alt={`${coin.name} logo`} />
                       </div>
