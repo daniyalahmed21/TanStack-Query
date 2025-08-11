@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import { fetchCoinDetails } from '../services/fetchCoinDetails';
+import CoinDetailsSkeleton from '../loaders/CoinDetailsSkeleton';
 
 const CoinDetails = () => {
     const { coinId } = useParams();
@@ -15,9 +16,7 @@ const CoinDetails = () => {
 
     if (isLoading) {
       return (
-        <div className="flex justify-center items-center h-screen">
-          <span className="loading loading-spinner loading-lg"></span>
-        </div>
+        <CoinDetailsSkeleton/>
       );
     }
 

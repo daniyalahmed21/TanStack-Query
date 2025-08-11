@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { fetchCoinData } from "../services/fetchCoinDataByMarket";
 import { CurrencyContext } from "../context/CurrencyContext";
 import { useNavigate } from "react-router";
+import CoinTableSkeleton from "../loaders/CoinTableSkeleton";
 
 const CoinTable = () => {
   const [page, setPage] = useState(1);
@@ -23,9 +24,7 @@ const CoinTable = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
+      <CoinTableSkeleton/>
     );
   }
 
@@ -59,7 +58,7 @@ const CoinTable = () => {
                   <div className="flex items-center space-x-3 cursor-pointer">
                     <div className="avatar ">
                       <div className="mask mask-squircle w-8 h-8">
-                        <img src={coin.image} alt={`${coin.name} logo`} />
+                        <img src={coin.image} alt={`${coin.name} logo`} loading="lazy"/>
                       </div>
                     </div>
                     <div>

@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router"; // Use react-router-dom for modern React Router
 
 const Banner = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero bg-base-200 h-[calc(100vh-5rem)]">
       <div className="hero-content text-center">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Discover the Future of Finance</h1>
