@@ -27,7 +27,7 @@ A modern cryptocurrency tracker built with React.js, featuring real-time market 
 #### Installation
 1.  Clone the repository:
     ```bash
-    git clone [your-repo-url]
+    git clone https://github.com/daniyalahmed21/TanStack-Query
     cd coin-gecko
     ```
 2.  Install dependencies:
